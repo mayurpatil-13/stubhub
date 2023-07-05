@@ -24,7 +24,8 @@ import pymongo
 
 # print("done")
 
-driver = webdriver.Chrome() 
+driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
+
 urls_list = ['https://www.stubhub.com/sports-tickets/category/28/' , 'https://www.stubhub.com/concert-tickets/category/1/' , 'https://www.stubhub.com/theater-and-arts-tickets/category/174/']
 
 categories =[ 'Sports' , 'Concerts' ,'TheatreAndArts']
