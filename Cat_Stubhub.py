@@ -49,7 +49,7 @@ for url in urls_list:
         time.sleep(2)
         try:
             element = WebDriverWait(driver, 20).until(
-            EC.presence_of_element_located((By.XPATH, '//*[contains(concat( " ", @class, " " ), concat( " ", "erQXmZ", " " ))]'))
+            EC.presence_of_element_located((By.XPATH, '//*[contains(concat( " ", @class, " " ), concat( " ", "ezomsK", " " ))]'))
         )   
             if element.is_displayed():
                 element.click()
@@ -58,7 +58,7 @@ for url in urls_list:
 
     WebDriverWait(driver , 20)
         
-    event_element = driver.find_elements('xpath', '//*[contains(concat( " ", @class, " " ), concat( " ", "gKAnCI", " " ))]/a')
+    event_element = driver.find_elements('xpath', '//*[contains(concat( " ", @class, " " ), concat( " ", "spHPz", " " ))]/a')
 
 
     # Extract the content of the script element
