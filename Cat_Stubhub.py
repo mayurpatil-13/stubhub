@@ -29,10 +29,13 @@ display = Display(visible=0, size=(800, 800))
 display.start()
 
 chrome_options = Options()
+
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--headless")
 
 driver = webdriver.Chrome(options=chrome_options)
+
 
 
 
