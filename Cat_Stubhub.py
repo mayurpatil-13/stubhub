@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.chrome.options import Options
 import pandas as pd
 import time
 import pymongo
@@ -27,8 +28,13 @@ from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 800))  
 display.start()
 
+chrome_options = Options()
+chrome_options.add_argument("--no-sandbox")
+chrome_options.addArguments("--disable-dev-shm-usage")
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=chrome_options)
+
+
 
 urls_list = ['https://www.stubhub.com/sports-tickets/category/28/' , 'https://www.stubhub.com/concert-tickets/category/1/' , 'https://www.stubhub.com/theater-and-arts-tickets/category/174/']
 
