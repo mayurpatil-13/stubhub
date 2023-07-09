@@ -23,9 +23,12 @@ import pymongo
 # cat_collection.insert_one({"start": 'Okay'})
 
 # print("done")
+from pyvirtualdisplay import Display
+display = Display(visible=0, size=(800, 800))  
+display.start()
 
-driver = webdriver.Chrome(
-                          )
+
+driver = webdriver.Chrome()
 
 urls_list = ['https://www.stubhub.com/sports-tickets/category/28/' , 'https://www.stubhub.com/concert-tickets/category/1/' , 'https://www.stubhub.com/theater-and-arts-tickets/category/174/']
 
