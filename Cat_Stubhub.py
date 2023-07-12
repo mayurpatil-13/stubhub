@@ -10,9 +10,6 @@ from selenium.common.exceptions import TimeoutException
 import pandas as pd
 import time
 import pymongo
-from pymongo.uri_parser import quote_username, quote_password
-
-q_username = quote_username('')
 
 client = pymongo.MongoClient('mongodb+srv://aniketchopade2971:Aniket2971@cluster0.scwcgeh.mongodb.net/')
 
