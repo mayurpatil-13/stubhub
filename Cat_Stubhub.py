@@ -85,8 +85,9 @@ for url in urls_list:
     print(len(event_element))
     for element in event_element: 
         event_content = element.get_attribute('href')
-        row_data = {'category_name':categories[i]  ,'EventUrl' : event_content}      
-        df = df.append(row_data,ignore_index = True)
+        row_data = {'category_name':categories[i]  ,'EventUrl' : event_content}  
+        pd.concat([df, pd.DataFrame([row_data])], ignore_index=True)    
+        # df = df.append(row_data,ignore_index = True)
         # cat_collection.insert_one(row_data)
         print(event_content)
         events_list.append(event_content)
@@ -97,6 +98,7 @@ for url in urls_list:
 
     df.to_csv(categories[i]+'.csv')
     i+=1
+    break
 
 # Close the WebDriver
 driver.quit()
