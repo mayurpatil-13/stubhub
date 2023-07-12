@@ -85,7 +85,7 @@ for url in urls_list:
         row_data = {'category_name':categories[i]  ,'EventUrl' : event_content}  
         pd.concat([df, pd.DataFrame([row_data])], ignore_index=True)    
         # df = df.append(row_data,ignore_index = True)
-        # cat_collection.insert_one(row_data)
+        cat_collection.insert_one(row_data)
         print(event_content)
         events_list.append(event_content)
     print("======")
