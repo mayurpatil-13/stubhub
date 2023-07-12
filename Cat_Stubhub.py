@@ -10,17 +10,17 @@ from selenium.common.exceptions import TimeoutException
 import pandas as pd
 import time
 import pymongo
-# from pymongo.uri_parser import quote_username, quote_password
+from pymongo.uri_parser import quote_username, quote_password
 
-# q_username = quote_username('')
+q_username = quote_username('')
 
-# client = pymongo.MongoClient('mongodb+srv://aniketchopade2971:Aniket2971@cluster0.scwcgeh.mongodb.net/')
+client = pymongo.MongoClient('mongodb+srv://aniketchopade2971:Aniket2971@cluster0.scwcgeh.mongodb.net/')
 
-# db = client['stubhub-database']
+db = client['stubhub-database']
 
-# cat_collection = db.category
+cat_collection = db.category
 
-# cat_collection.insert_one({"start": 'Okay'})
+cat_collection.insert_one({"start": 'Okay'})
 
 # print("done")
 from pyvirtualdisplay import Display
