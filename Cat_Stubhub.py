@@ -70,7 +70,7 @@ for url in urls_list:
         except (NoSuchElementException, StaleElementReferenceException, TimeoutException):
             arrow = False
 
-    WebDriverWait(driver , 60)
+    WebDriverWait(driver , 30)
         
     event_element = driver.find_elements('xpath', '//*[contains(concat( " ", @class, " " ), concat( " ", "dMxVrR", " " ))]/a')
 
