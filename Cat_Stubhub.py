@@ -87,7 +87,8 @@ for url in urls_list:
         name =splitted_link[len(splitted_link)-3]
         stubhub_entity_id = splitted_link[len(splitted_link)-1]
         type =splitted_link[len(splitted_link)-2] 
-        row_data = {'name':name , 'stubhub_entity_id':stubhub_entity_id ,'category_name':categories[i]  ,'EntityLink' : event_content , 'type':type}  
+        row_data = {'name':name , 'stubhub_entity_id':stubhub_entity_id ,'category_name':categories[i]  ,'entityLink' : event_content , 'type':type}  
+        # 'name' ,'stubhub_entity_id' ,'category_name','entityLink' , 'type'
         pd.concat([df, pd.DataFrame([row_data])], ignore_index=True)    
         df = df.append(row_data,ignore_index = True)
         cat_collection.insert_one(row_data)
