@@ -15,7 +15,7 @@ client = pymongo.MongoClient('mongodb+srv://aniketchopade2971:Aniket2971@cluster
 
 db = client['stubhub-database']
 
-cat_collection = db.category
+cat_collection = db.Entity
 
 cat_collection.insert_one({"start": 'Okay'})
 
@@ -47,7 +47,7 @@ i=0
 
 for url in urls_list:
     # url ='https://www.stubhub.com/sports-tickets/category/28/'
-    df = pd.DataFrame(columns = ['category_name' ,'EventUrl'])
+    df = pd.DataFrame(columns = ['name' ,'stubhub_entity_id' ,'category_name','entityLink' , 'type'])
 
     driver.get(url)
 
@@ -82,7 +82,11 @@ for url in urls_list:
     print(len(event_element))
     for element in event_element: 
         event_content = element.get_attribute('href')
-        row_data = {'category_name':categories[i]  ,'EventUrl' : event_content}  
+        splitted_link = event_content.split("/")
+        name =splitted_link[len(splitted_link)-3]
+        stubhub_entity_id = splitted_link[len(splitted_link)-1]
+        type =splitted_link[len(splitted_link)-2] 
+        row_data = {'name':name , 'stubhub_entity_id':stubhub_entity_id ,'category_name':categories[i]  ,'EntityLink' : event_content , 'type':type}  
         pd.concat([df, pd.DataFrame([row_data])], ignore_index=True)    
         # df = df.append(row_data,ignore_index = True)
         cat_collection.insert_one(row_data)
@@ -95,7 +99,6 @@ for url in urls_list:
 
     df.to_csv(categories[i]+'.csv')
     i+=1
-    break
 
 # Close the WebDriver
 driver.quit()
