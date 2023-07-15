@@ -70,7 +70,7 @@ for url in urls_list:
         except (NoSuchElementException, StaleElementReferenceException, TimeoutException):
             arrow = False
 
-    WebDriverWait(driver , 20)
+    WebDriverWait(driver , 60)
         
     event_element = driver.find_elements('xpath', '//*[contains(concat( " ", @class, " " ), concat( " ", "dMxVrR", " " ))]/a')
 
@@ -97,7 +97,7 @@ for url in urls_list:
     print("======")
     print(len(events_list))
     # Print the script content
-    print(script_content)
+    # print(script_content)
 
     df.to_csv(categories[i]+'.csv')
     i+=1
