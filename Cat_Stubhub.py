@@ -20,9 +20,9 @@ cat_collection = db.Entity
 cat_collection.insert_one({"start": 'Okay'})
 
 # print("done")
-from pyvirtualdisplay import Display
-display = Display(visible=0, size=(800, 800))  
-display.start()
+# from pyvirtualdisplay import Display
+# display = Display(visible=0, size=(800, 800))  
+# display.start()
 
 chrome_options = Options()
 
@@ -34,6 +34,7 @@ chrome_options.add_argument("start-maximized")
 chrome_options.add_argument("enable-automation")
 chrome_options.add_argument("--disable-infobars")
 chrome_options.add_argument("--disable-dev-shm-usage")
+
 
 driver = webdriver.Chrome(options=chrome_options)
 
@@ -62,7 +63,7 @@ for url in urls_list:
         time.sleep(2)
         try:
             element = WebDriverWait(driver, 20).until(
-            EC.presence_of_element_located((By.XPATH, '//*[contains(concat( " ", @class, " " ), concat( " ", "ezomsK", " " ))]'))
+            EC.presence_of_element_located((By.XPATH, '//*[contains(concat( " ", @class, " " ), concat( " ", "jsLylC", " " ))]'))
         )   
             if element.is_displayed():
                 element.click()
@@ -71,7 +72,7 @@ for url in urls_list:
 
     WebDriverWait(driver , 20)
         
-    event_element = driver.find_elements('xpath', '//*[contains(concat( " ", @class, " " ), concat( " ", "spHPz", " " ))]/a')
+    event_element = driver.find_elements('xpath', '//*[contains(concat( " ", @class, " " ), concat( " ", "dMxVrR", " " ))]/a')
 
 
     # Extract the content of the script element
@@ -88,8 +89,8 @@ for url in urls_list:
         type =splitted_link[len(splitted_link)-2] 
         row_data = {'name':name , 'stubhub_entity_id':stubhub_entity_id ,'category_name':categories[i]  ,'EntityLink' : event_content , 'type':type}  
         pd.concat([df, pd.DataFrame([row_data])], ignore_index=True)    
-        # df = df.append(row_data,ignore_index = True)
-        cat_collection.insert_one(row_data)
+        df = df.append(row_data,ignore_index = True)
+        # cat_collection.insert_one(row_data)
         print(event_content)
         events_list.append(event_content)
     print("======")
