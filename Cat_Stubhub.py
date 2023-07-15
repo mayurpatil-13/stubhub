@@ -53,7 +53,7 @@ for url in urls_list:
     driver.get(url)
 
     wait = WebDriverWait(driver, 20)
-    script_element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'jsnpzz')))
+    # script_element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'jsnpzz')))
 
 
     arrow = True
@@ -76,7 +76,7 @@ for url in urls_list:
 
 
     # Extract the content of the script element
-    script_content = script_element.get_attribute('innerHTML')
+    # script_content = script_element.get_attribute('innerHTML')
 
     events_list =[]
     print("======")
