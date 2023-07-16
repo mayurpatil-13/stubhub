@@ -106,6 +106,7 @@ def entityDataExtract():
         
         df.to_csv(categories[i]+'.csv')
         i+=1
+        break
 
     # Close the WebDriver
     driver.quit()
