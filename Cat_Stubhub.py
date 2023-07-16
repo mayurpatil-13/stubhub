@@ -91,7 +91,7 @@ for url in urls_list:
         row_data = {'name':name , 'stubhub_entity_id':stubhub_entity_id ,'category_name':categories[i]  ,'entityLink' : event_content , 'type':type}  
         # 'name' ,'stubhub_entity_id' ,'category_name','entityLink' , 'type'
         pd.concat([df, pd.DataFrame([row_data])], ignore_index=True)    
-        df = df.append(row_data,ignore_index = True)
+        # df = df.append(row_data,ignore_index = True)
         cat_collection.insert_one(row_data)
         print(event_content)
         events_list.append(event_content)
