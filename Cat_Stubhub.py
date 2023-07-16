@@ -85,9 +85,9 @@ for url in urls_list:
     for element in event_element: 
         event_content = element.get_attribute('href')
         splitted_link = event_content.split("/")
-        name =splitted_link[len(splitted_link)-3]
-        stubhub_entity_id = splitted_link[len(splitted_link)-1]
-        type =splitted_link[len(splitted_link)-2] 
+        name =splitted_link[len(splitted_link)-4]
+        stubhub_entity_id = splitted_link[len(splitted_link)-2]
+        type =splitted_link[len(splitted_link)-3] 
         row_data = {'name':name , 'stubhub_entity_id':stubhub_entity_id ,'category_name':categories[i]  ,'entityLink' : event_content , 'type':type}  
         # 'name' ,'stubhub_entity_id' ,'category_name','entityLink' , 'type'
         pd.concat([df, pd.DataFrame([row_data])], ignore_index=True)    
