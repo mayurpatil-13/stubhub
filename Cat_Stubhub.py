@@ -59,6 +59,7 @@ for url in urls_list:
     arrow = True
 
     while(arrow != False):
+        print("fetching...")
         WebDriverWait(driver , 20)
         time.sleep(2)
         try:
