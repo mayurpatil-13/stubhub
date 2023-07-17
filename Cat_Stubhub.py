@@ -80,6 +80,7 @@ def entityDataExtract():
         event_element = driver.find_elements('xpath', '//*[contains(concat( " ", @class, " " ), concat( " ", "dMxVrR", " " ))]/a')
 
         events_list =[]
+        all_events_list =[]
         print("======")
         print(len(event_element))
         
@@ -100,9 +101,12 @@ def entityDataExtract():
             
             if check_doccument(row_data):
                 cat_collection.insert_one(row_data)
-            events_list.append(event_content)
+                events_list.append(event_content)
+            all_events_list.append(event_content)
         print("======")
         print(len(events_list))
+        print("=+=+=+=")
+        print(len(list(set(all_events_list))))
         
         df.to_csv(categories[i]+'.csv')
         i+=1
