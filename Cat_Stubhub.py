@@ -64,8 +64,8 @@ def entityDataExtract():
 
         # ==== loading all data
         while(arrow != False):
+            print('fetching...')
             WebDriverWait(driver , 20)
-            time.sleep(2)
             try:
                 element = WebDriverWait(driver, 20).until(
                 EC.presence_of_element_located((By.XPATH, '//*[contains(concat( " ", @class, " " ), concat( " ", "jsLylC", " " ))]'))
