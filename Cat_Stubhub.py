@@ -98,8 +98,8 @@ def entityDataExtract():
             pd.concat([df, pd.DataFrame([row_data])], ignore_index=True)    
             # df = df.append(row_data,ignore_index = True)
             
-            # if check_doccument(row_data):
-            cat_collection.insert_one(row_data)
+            if check_doccument(row_data):
+                cat_collection.insert_one(row_data)
             events_list.append(event_content)
         print("======")
         print(len(events_list))
